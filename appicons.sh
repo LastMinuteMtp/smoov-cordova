@@ -12,19 +12,27 @@ function init
   sips -s format png -z 1024 1024 $FILE --out $DIR/iTunesArtwork@2x.png
   sips -s format png -z 512 512   $FILE --out $DIR/iTunesArtwork.png
 
-  # devices
+  # ios
   sips -s format png -z 144 144   $FILE --out $DIR/Icon-72@2x.png
   sips -s format png -z 72 72     $FILE --out $DIR/Icon-72.png
-
   sips -s format png -z 114 114   $FILE --out $DIR/Icon@2x.png
   sips -s format png -z 57 57     $FILE --out $DIR/Icon.png
 
-  # others
-  sips -s format png -z 100 100   $FILE --out $DIR/Icon-Small-50@2x.png
-  sips -s format png -z 50 50     $FILE --out $DIR/Icon-Small-50.png
+  # android
+  sips -s format png -z 36 36     $FILE --out $DIR/icon-36-ldpi.png
+  sips -s format png -z 48 48     $FILE --out $DIR/icon-48-mdpi.png
+  sips -s format png -z 72 72     $FILE --out $DIR/icon-72-hdpi.png
+  sips -s format png -z 96 96     $FILE --out $DIR/icon-96-xhdpi.png
 
-  sips -s format png -z 58 58     $FILE --out $DIR/Icon-Small@2x.png
-  sips -s format png -z 29 29     $FILE --out $DIR/Icon-Small.png
+  # blackberry
+  sips -s format png -z 80 80     $FILE --out $DIR/icon-80.png
+
+  # webos
+  sips -s format png -z 64 64     $FILE --out $DIR/icon-64.png
+
+  # webos
+  sips -s format png -z 48 48     $FILE --out $DIR/icon-48.png
+  sips -s format png -z 173 173   $FILE --out $DIR/icon-173.png
 }
 
 function file_error
