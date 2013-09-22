@@ -3,7 +3,7 @@
 
 ```
   chmod -R 777 www/
-  sudo rm -rf www/resources/sass/.sass-cache/**
-  sudo rm -rf www/resources/sass/.sass-cache
-  sudo cordova build
+  rm -rf www/resources/sass/.sass-cache/**
+  rm -rf www/resources/sass/.sass-cache
+  cordova build
 ```
