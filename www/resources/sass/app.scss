@@ -1,0 +1,581 @@
+// The following two lines import the default Sencha Touch theme. If you are building
+// a new theme, remove them and the add your own CSS on top of the base CSS (which
+// is already included in your app.json file).
+
+
+@import 'compass/css3';
+
+@include font-face('Novecento', font-files('Novecento-LightWide.otf'), false, normal, normal);
+@include font-face('HelveticaNeue', font-files('HelveticaNeueLTPro-Lt.otf'));
+@include font-face('HelveticaCondensed', font-files('HelveticaNeueLTPro-BdCn.otf'));
+@include font-face('Brankic', font-files('pictos/Brankic1979.ttf'));
+$font-family: 'HelveticaNeue';
+
+
+$base-color:#373F45;
+$page-bg-color:#373F45;
+$base-gradient:'flat';
+$verylight-grey:#cdcfd0;
+$verylight-grey2:#e6e7e8;
+$basic-red:#E54101;
+
+$light-grey:#73797D;
+$dark-grey:#2C3237;
+$button-radius: 0.1em;
+$basic-blue:#40A9E3;
+
+$active-color:$light-grey;
+
+
+
+@mixin custom-iconmask($name) {
+  .x-tab .x-button-icon.#{$name},
+  .x-button .x-button-icon.#{$name} {
+    -webkit-mask-image: inline-image('../images/pictos/' + $name + '.png');
+    -webkit-mask-size:100% 100%;
+    background: #fff;
+  }
+}
+
+  //inutile et ca economise
+@import 'sencha-touch/default';
+@import 'sencha-touch/default/all';
+
+@include icon('menu', '*', 'Brankic');
+
+
+@include custom-iconmask('params');
+@include custom-iconmask('itineraire');
+@include custom-iconmask('calendar2');
+@include custom-iconmask('favoris');
+
+@include sencha-button-ui('white', #FFFFFF, 'flat');
+
+@include sencha-toolbar-ui('white',#FFFFFF,'flat');
+
+// Custom code goes here..
+
+
+.x-menublue{
+
+  .x-button{
+    padding:0px!important;
+
+
+  }
+
+  .x-button .x-button-icon{
+    width:6em;
+    height:6em;
+    margin-bottom:0.2em;
+  }
+
+}
+
+// Examples of using the icon mixin:
+// @include icon('user');
+
+//@import 'stylesheets/all';
+
+
+.x-menublue{
+  background:$basic-blue;
+  padding:0px!important;
+  font-family:'HelveticaCondensed';
+  font-size:0.5em;
+
+  .x-button {
+    background:transparent;
+    border:0px;
+    .x-button-label{
+      color:#FFF;
+    }
+  }
+
+}
+
+
+.x-toolbar-blue{
+  background:$basic-blue!important;
+  border-bottom:1px solid $basic-blue!important;
+
+  .x-button{
+    color:white!important;
+  }
+
+
+}
+
+#ext-viewport{
+  color:$light-grey;
+}
+
+.x-right-panel{
+
+  @include background-image(linear-gradient(left, $base-color 25%, $dark-grey 25%, $dark-grey));
+}
+
+.x-right-panel1{
+  background:url('../images/02_IconeUn.png')no-repeat left center;
+  -webkit-background-size: 50%;
+  -moz-background-size: 50%;
+  -o-background-size: 50%;
+  background-size: 50%;
+}
+
+.x-right-panel2{
+  background:url('../images/02_IconeDeux.png')no-repeat left center;
+  -webkit-background-size: 50%;
+  -moz-background-size: 50%;
+  -o-background-size: 50%;
+  background-size: 50%;
+}
+
+
+.x-right-panel3{
+  background:url('../images/02_IconeTrois.png')no-repeat left center;
+  -webkit-background-size: 50%;
+  -moz-background-size: 50%;
+  -o-background-size: 50%;
+  background-size: 50%;
+}
+
+
+.btn-transport-pieton{
+  background:url('../images/02_IconePieton.png')no-repeat left center;
+  @include background-size(contain);
+}
+
+.btn-transport-velo{
+  background:url('../images/02_IconeVelo.png')no-repeat left center;
+  @include background-size(contain);
+}
+
+.btn-transport-bus{
+  background:url('../images/02_IconeBus.png')no-repeat left center;
+  @include background-size(contain);
+}
+
+.btn-transport-licorne{
+  background:url('../images/02_IconeLicorne.png')no-repeat left center;
+  @include background-size(contain);
+}
+
+.btn-dropped-pieton{
+   background:url('../images/02_IconePieton_ON.png')no-repeat left center;
+   @include background-size(contain);
+  left:-15px;
+ }
+
+.btn-dropped-bus{
+  background:url('../images/02_IconeBus_ON.png')no-repeat left center;
+  @include background-size(contain);
+  left:-15px;
+}
+
+.btn-dropped-velo{
+  background:url('../images/02_IconeVelo_ON.png')no-repeat left center;
+  @include background-size(contain);
+  left:-15px;
+}
+
+.btn-dropped-licorne{
+  background:url('../images/02_IconeLicorne_ON.png')no-repeat left center;
+  @include background-size(contain);
+  left:-15px;
+}
+
+
+.x-toolbar-plain{
+  background:transparent!important;
+  border-top:0px!important;
+}
+
+.x-trip-pref{
+  @include background-image(linear-gradient(left, $base-color 83%, $dark-grey 83%, $dark-grey));
+
+  }
+
+
+.x-trip-pref .x-html, .x-title-moyens-transport .x-html{
+  color:$light-grey!important;
+  font-size:1.4em;
+
+}
+
+.x-button.x-button-white{
+  color:$basic-blue!important;
+  font-size:1.6em;
+  @include border-radius($button-radius);
+  font-weight:bold;
+}
+
+.x-title-moyens-transport{
+  padding:1.4em!important;
+  font-family:'Novecento';
+  color:$light-grey;
+  padding: 0.3em!important;
+
+}
+
+.x-title-moyens-transport-select{
+  font-size: 1.6em;
+  font-family: 'Novecento';
+  padding: 0.5em !important;
+
+}
+
+
+.x-trip-pref-subtitle-fast{
+  background:url('../images/03_iconeRapide_ON.png') no-repeat center right transparent;
+  @include background-size(contain);
+  height:2em;
+  width:2em!important;
+}
+
+.x-trip-pref-subtitle-connections{
+  background:url('../images/03_iconeFacile_ON.png') no-repeat center right transparent;
+  @include background-size(contain);
+  height:2em;
+  width:2em!important;
+}
+
+
+.x-trip-pref-title{
+  font-family:'Novecento';
+}
+
+.x-trip-pref-subtitle {
+  font-size: 0.8em!important;
+  color:white;
+ text-align:center;
+  .x-inner{
+    line-height:2.9em;
+  }
+}
+
+.x-trip-pref-othertitle-fast{
+  font-size:0.6em;
+  text-align:center;
+  margin-top:1em;
+  background:url('../images/03_IconeRapide_OFF.png') no-repeat 91% center transparent;
+  @include background-size('20px');
+
+}
+
+.x-trip-pref-othertitle-connections{
+  font-size:0.6em;
+  text-align:center;
+  margin-top:1em;
+  background:url('../images/03_IconeFacile_OFF.png') no-repeat 91% center transparent;
+  @include background-size('20px');
+
+}
+
+.x-trip-pref-arrow-encap{
+     text-align:center;
+
+}
+
+.x-trip-pref-arrow-bottom{
+   background:url('../images/03_FlecheBas.png') no-repeat center right transparent;
+   @include background-size(contain);
+   width:22px;
+   height:13px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:2em;
+  margin-bottom:1.5em;
+ }
+
+
+.x-trip-pref-arrow-top{
+  background:url('../images/03_FlecheHaut.png') no-repeat center right transparent;
+  @include background-size(contain);
+  width:22px;
+  height:13px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:2em;
+  margin-bottom:1.5em;
+}
+
+.x-trip-pref-arrow-right{
+
+  height:3px;
+  width:10px;
+  background:$verylight-grey;
+  @include rotate(-45deg);
+  margin-left:auto;
+  margin-right:auto;
+
+}
+
+.x-html {
+  padding:0.8em!important;
+}
+
+
+.x-cs-enabled{
+  line-height:4em;
+  font-size:1.1em;
+background:$dark-grey;
+  border-bottom:1px solid $base-color;
+  .x-inner{
+    .x-html{
+      height: 4em;
+      line-height: 3.8em;
+      color:$light-grey!important;
+    }
+  }
+
+}
+
+
+.titlebar-tit{
+  background:transparent;
+  border-bottom:0px;
+  font-size:1.6em;
+  font-family:'Novecento';
+  padding: 0.3em!important;
+  height: 140px;
+  border-bottom: 0px!important;
+  color:$light-grey;
+}
+
+
+.titlebar-titdeg{
+  @include background-image(linear-gradient(left, $base-color 83%, $dark-grey 83%, $dark-grey));
+  padding-top:1em!important;
+}
+
+
+
+.x-cs-disabled{
+  line-height:4em;
+  font-size:1.1em;
+  background:$light-grey;
+  .x-inner{
+    .x-html{
+      height: 4em;
+      line-height: 3.8em;
+      color:$base-color!important;
+    }
+  }
+}
+
+
+.x-calcul-right{
+  background:$dark-grey;
+}
+
+
+x-calcul-left{
+  background:$base-color;
+}
+
+.x-calcul-title{
+  font-size:1.8em;
+  padding-bottom:1em;
+  font-family: 'Novecento';
+  .x-inner{
+    .x-innerhtml{
+      margin:0.5em;
+    }
+  }
+}
+
+
+.x-calcul-searchfield{
+         background:$verylight-grey;
+         color:dark-grey;
+  margin:10px;
+  @include border-radius(0.2em);
+
+  .x-field-input:before{
+    content:''
+  }
+
+  .x-input-search{
+    background:transparent;
+  }
+}
+.x-calcul-list{
+  background:$base-color;
+}
+
+.x-calcul-drop-start{
+   background:url('../images/05_IconeDepart_OFF.png') no-repeat center center transparent;
+  @include background-size('70%');
+ }
+
+.x-calcul-drop-finish{
+  background:url('../images/05_IconeFinish_OFF.png') no-repeat center center transparent;
+  @include background-size('70%');
+}
+
+.x-calcul-lieux-title{
+  font-size:1.8em;
+  font-family: 'Novecento';
+}
+
+.x-itineraire-search-result{
+
+  border-top:1 px solid $light-grey!important;
+  border-bottom:1 px solid $light-grey!important;
+  color:#FFFFFF!important;
+
+  .x-list-item.x-list-item-tpl{
+    border-top:1 px solid $light-grey!important;
+    border-bottom:1 px solid $light-grey!important;
+  }
+
+}
+
+.x-list-normal .x-list-item.x-list-item-tpl{
+  border-top:1 px solid $light-grey!important;
+}
+
+
+.x-calcul-drop-start-on{
+  background:url('../images/05_IconeDepart_ON.png') no-repeat center center transparent;
+  @include background-size('70%');
+}
+
+.x-calcul-drop-end-on{
+  background:url('../images/05_IconeFinish_ON.png') no-repeat center center transparent;
+  @include background-size('70%');
+}
+
+
+.x-mask .x-mask-inner{
+ background:#FFF;
+  color:$dark-grey;
+  width:13em;
+  height:13em;
+  border-radius:7em;
+}
+
+.x-mask.x-has-message .x-loading-spinner-outer{
+ /* display:none;    */
+}
+
+
+
+.x-mask .x-mask-message{
+  bottom:40%;
+  color:$dark-grey;
+  font-family: 'Novecento';
+  font-size:1.2em;
+}
+
+.x-loading-spinner{
+  margin-top:150px;
+}
+
+
+.x-trajet{
+  @include background-image(linear-gradient(left, $verylight-grey 50%, $verylight-grey2 50%, $verylight-grey2));
+}
+
+.x-trajet-time{
+ width:8em;
+ height:8em;
+ background:$basic-red;
+  border:3px solid white;
+  color:white;
+  border-radius:4em;
+  text-align:center;
+  margin:1em;
+  line-height:3em;
+}
+
+.x-trajet-time-nbmin{
+  font-size:4.2em;
+  font-family: 'Novecento';
+  padding-top:0.4em;
+
+}
+
+.x-trajet-time-min{
+        font-family:'HelveticaCondensed'
+}
+
+
+.x-step-center-walk{
+
+
+  background:url('../images/09_IconePieton.png')no-repeat left center;
+  @include background-size(contain);
+
+
+}
+.x-step-center-bus{
+  background:url('../images/09_IconeBus.png')no-repeat left center;
+  @include background-size(contain);
+
+}
+.x-step-center-unicorn{
+  background:url('../images/09_IconeLicorne.png')no-repeat left center;
+  @include background-size(contain);
+
+}
+
+.x-step-center-bike,.x-step-center-rentalBike{
+  background:url('../images/09_IconeVelo.png')no-repeat left center;
+  @include background-size(contain);
+
+}
+
+.x-step-right{
+  width:40%;
+  padding-left:0.4em;
+  color:$dark-grey;
+
+}
+
+.x-step-left{
+  width:40%;
+  font-family:'Novecento';
+  font-size:1.2em;
+}
+
+.x-step-center{
+  width:2.5em;
+  height:2.5em;
+
+}
+
+.x-step-right-title{
+  font-size:1.2em;
+  margin-bottom:0.2em;
+}
+
+.x-step{
+  height:7em;
+  @include background-image(linear-gradient(left, $verylight-grey 49%,#FFFFFF 49%, #FFFFFF 51%, $verylight-grey2 51%, $verylight-grey2));
+}
+
+.x-step-right-text{
+  font-size:0.8em;
+
+}
+
+.x-calendrier{
+  background:url('../images/08_CALENDRIER.png')no-repeat left center!important;
+
+  -webkit-background-size: cover!important;
+  background-size: cover!important;
+}
+
+
+.x-button-frame{
+  border:0px;
+  background:transparent;
+  color:$light-grey;
+  font-family: 'Novecento';
+  font-size:1.1em;
+  white-space:normal;
+  text-overflow: clip!important;
+
+}
