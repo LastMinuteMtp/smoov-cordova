@@ -6,4 +6,5 @@
   rm -rf www/resources/sass/.sass-cache/**
   rm -rf www/resources/sass/.sass-cache
   cordova build
+  cordova emulate android
 ```
